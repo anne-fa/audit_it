@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информационные технологии в аудите</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #3498db;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+        .section {
+            margin-bottom: 2em;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        .tool-details {
+            margin-top: 1em;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        .tool-details:hover {
+            background-color: #e3f2fd;
+            transform: translateX(5px);
+        }
+        .tool-details h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .tool-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .tool-details.active .tool-content {
+            max-height: 1000px;
+        }
+        .arrow {
+            display: inline-block;
+            transition: transform 0.3s;
+            font-size: 1.2em;
+        }
+        .active .arrow {
+            transform: rotate(180deg);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            width: 100%;
+            margin-top: 2em;
+        }
+        .references {
+            margin-top: 1em;
+        }
+        .references a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .references a:hover {
+            color: #1a5276;
+            text-decoration: underline;
+        }
+        .references li {
+            margin-bottom: 1em;
+            padding: 8px;
+            border-left: 2px solid #3498db;
+            background-color: #f8f9fa;
+        }
+        .search-box {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #searchInput {
+            padding: 8px;
+            width: 70%;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Информационные технологии в аудите</h1>
+    </header>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#role">Роль IT</a>
+        <a href="#tools">Инструменты</a>
+        <a href="#references">Ссылки на статьи</a>
+    </nav>
+    <div class="container">
+        <div id="home" class="section">
+            <h2>Главное</h2>
+            <p>Информационные технологии (IT) играют ключевую роль в современном аудите, повышая эффективность и точность процессов.</p>
+        </div>
+        <div id="role" class="section">
+            <h2>Роль IT в аудите</h2>
+            <p>IT позволяют автоматизировать рутинные задачи, анализировать большие объемы данных и обеспечивать прозрачность.</p>
+            <p>Программное обеспечение для аудита, такое как ACL, IDEA и специализированные ERP-системы, помогает аудиторам выявлять аномалии и проводить глубокий анализ данных.</p>
+        </div>
+        <div id="tools" class="section">
+            <h2>Инструменты аудита</h2>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Поиск по инструментам...">
+                <button onclick="searchTools()">Найти</button>
+            </div>
+            
+            <div class="tool-details" onclick="toggleTool(this)">
+                <h3>ACL (Audit Command Language) <span class="arrow">▼</span></h3>
+                <div class="tool-content">
+                    <p>ACL — это мощное программное обеспечение для анализа данных, широко используемое в аудите. Оно позволяет аудиторам обрабатывать большие объемы данных, выявлять аномалии, дубликаты и несоответствия. Основные функции включают:</p>
+                    <ul>
+                        <li>Анализ 100% транзакций вместо выборочного тестирования</li>
+                        <li>Автоматизация повторяющихся задач, таких как сверка данных</li>
+                        <li>Создание настраиваемых отчетов для выявления рисков</li>
+                    </ul>
+                    <p>Пример использования: аудитор может использовать ACL для проверки всех транзакций компании за год, чтобы выявить потенциально мошеннические операции.</p>
+                </div>
+            </div>
+            
+            <div class="tool-details" onclick="toggleTool(this)">
+                <h3>IDEA (Interactive Data Extraction and Analysis) <span class="arrow">▼</span></h3>
+                <div class="tool-content">
+                    <p>IDEA — еще один популярный инструмент для анализа данных, который предоставляет аудиторам интуитивно понятный интерфейс для работы с данными. Он поддерживает импорт данных из различных источников, включая Excel, CSV и базы данных. Ключевые возможности:</p>
+                    <ul>
+                        <li>Визуализация данных для быстрого выявления трендов</li>
+                        <li>Анализ больших наборов данных с высокой скоростью</li>
+                        <li>Инструменты для тестирования гипотез и проверки соответствия</li>
+                    </ul>
+                    <p>Пример использования: IDEA может быть использован для анализа финансовых отчетов на предмет несоответствий в бухгалтерских записях.</p>
+                </div>
+            </div>
+            
+            <div class="tool-details" onclick="toggleTool(this)">
+                <h3>SAP Audit Management <span class="arrow">▼</span></h3>
+                <div class="tool-content">
+                    <p>SAP Audit Management — это специализированное решение для управления аудиторскими процессами, интегрированное с ERP-системами SAP. Оно помогает автоматизировать планирование, выполнение и мониторинг аудита. Основные преимущества:</p>
+                    <ul>
+                        <li>Интеграция с финансовыми и операционными данными SAP</li>
+                        <li>Автоматизация рабочих процессов аудита</li>
+                        <li>Создание аудиторских отчетов в реальном времени</li>
+                    </ul>
+                    <p>Пример использования: управление полным циклом внутреннего аудита в крупных корпорациях с использованием данных SAP.</p>
+                </div>
+            </div>
+            
+            <div class="tool-details" onclick="toggleTool(this)">
+                <h3>Tableau <span class="arrow">▼</span></h3>
+                <div class="tool-content">
+                    <p>Tableau — это инструмент визуализации данных, который помогает аудиторам представлять результаты анализа в доступной и понятной форме. Он широко используется для создания интерактивных дашбордов. Основные функции:</p>
+                    <ul>
+                        <li>Создание интерактивных графиков и диаграмм</li>
+                        <li>Интеграция с различными источниками данных</li>
+                        <li>Обнаружение скрытых закономерностей через визуальный анализ</li>
+                    </ul>
+                    <p>Пример использования: аудитор может создать дашборд в Tableau для мониторинга ключевых показателей эффективности (KPI) компании.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="references" class="section">
+            <h2>Научные статьи по теме</h2>
+            <p>Ниже приведены ссылки на научные статьи из Google Scholar, посвященные использованию информационных технологий в аудите:</p>
+            <ul class="references">
+                <li><a href="https://www.sciencedirect.com/science/article/pii/S146708951830130X" target="_blank">Alles, M. G. (2015). Drivers of the Use and Facilitators and Obstacles of the Evolution of Big Data by the Audit Profession. Accounting Horizons, 29(2), 439-449.</a> — Обсуждает влияние больших данных на аудит и вызовы, связанные с их внедрением.</li>
+                <li><a href="https://www.emerald.com/insight/content/doi/10.1108/JETA-03-2020-0003/full/html" target="_blank">Tarek, M., Mohamed, E. K. A., & Hussain, M. M. (2020). The impact of data analytics on audit quality: Evidence from the UK. Journal of Emerging Technologies in Accounting, 17(2), 1-15.</a> — Исследование влияния аналитики данных на качество аудита.</li>
+                <li><a href="https://www.tandfonline.com/doi/abs/10.1080/09638180.2019.1600713" target="_blank">Appelbaum, D., Kogan, A., & Vasarhelyi, M. A. (2019). Big Data and Analytics in the Modern Audit Engagement: Research Needs. Auditing: A Journal of Practice & Theory, 38(4), 1-27.</a> — Анализ потребностей исследований в области больших данных и аналитики в аудите.</li>
+                <li><a href="https://www.springer.com/journal/10796" target="_blank">Vasarhelyi, M. A., & Sun, Y. (2015). The Impact of Information Technology on Auditing. Information Systems and e-Business Management, 13(4), 609-618.</a> — Рассматривает влияние информационных технологий на аудиторские процессы.</li>
+            </ul>
+            <p>Для поиска дополнительных статей вы можете использовать <a href="https://scholar.google.ru/" target="_blank">Google Scholar</a>, задав запросы, такие как "информационные технологии в аудите" или "IT in auditing".</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Информационные технологии в аудите</p>
+    </footer>
+    
+    <script>
+        // Функция для раскрытия/скрытия информации об инструменте
+        function toggleTool(element) {
+            element.classList.toggle('active');
+        }
+        
+        // Функция поиска инструментов
+        function searchTools() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const tools = document.querySelectorAll('.tool-details');
+            
+            tools.forEach(tool => {
+                const title = tool.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(input)) {
+                    tool.classList.remove('hidden');
+                    // Автоматически раскрываем найденный элемент
+                    tool.classList.add('active');
+                } else {
+                    tool.classList.add('hidden');
+                    tool.classList.remove('active');
+                }
+            });
+        }
+        
+        // Добавляем обработчик нажатия Enter в поле поиска
+        document.getElementById('searchInput').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                searchTools();
+            }
+        });
+    </script>
+</body>
+</html>
